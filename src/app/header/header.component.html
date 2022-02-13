@@ -1,41 +1,48 @@
 <header class="w3-cotainer w3-card-4">
 
+  <div class="w3-half w3-padding-left w3-padding-right">
 
-    <div class="w3-display-container">
+    <div class="w3-display-container" style="width:100px">
       <a class="header-link" style="cursor:pointer" (click)="onBackToParts()">
-      <img src ="https://2mn.info/img/logo-el-boncoin-m-t.png" alt="logo 2mn annonces" style="width:100px;">
-      <h1 class="header-title w3-xxxlarge">
+      <img src ="https://2mn.info/img/logo-el-boncoin-m-t.png" alt="logo 2mn annonces" style="width:100%; object-fit:cover">
+      <h1 class="header-title">
           <div class="w3-display-middle w3-large">2mn</div>
           <div class="w3-display-bottommiddle w3-container"> annonces </div>
       </h1>
       </a>
     </div>
 
+  </div>
 
-  <ul class="header-navigation">
-    <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/all-stuff" routerLinkActive="active"><i class='fas fa-search w3-large w3-text-orange'></i> Rechercher</a>
-    </li>
-    <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/new-thing" routerLinkActive="active"><i class='fas fa-thumbtack w3-large w3-text-orange'></i> déposer une annonce</a>
-    </li>
-    <li class="header-navigation-item" *ngIf="(part >= 3 && isAuth)">
-      <a class="header-link" style="cursor: pointer" (click)="onLogout()">DECONNEXION</a>
-    </li>
-    <li class="header-navigation-item" *ngIf="(part >= 3 && !isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/auth/login" routerLinkActive="active">CONNEXION</a>
-    </li>
-    <li class="header-navigation-item" *ngIf="(part >= 3 && !isAuth)">
-      <a class="header-link" routerLink="/{{ partString }}/auth/signup" routerLinkActive="active">INSCRIPTION</a>
-    </li>
-  </ul>
-  <ul class="header-navigation nav-end">
+  <div class="w3-half">
+    <nav>
+      <ul class="header-navigation">
+        <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
+          <a class="header-link" routerLink="/{{ partString }}/all-stuff" routerLinkActive="active"><i class='fas fa-search w3-large'></i> Rechercher</a>
+        </li>
+        <li class="header-navigation-item" *ngIf="part === 1 || (part >= 3 && isAuth)">
+          <a class="header-link" routerLink="/{{ partString }}/new-thing" routerLinkActive="active"><i class='fas fa-thumbtack w3-large'></i> Déposer</a>
+        </li>
+        <li class="header-navigation-item" *ngIf="(part >= 3 && isAuth)">
+          <a class="header-link" style="cursor: pointer" (click)="onLogout()">DECONNEXION</a>
+        </li>
+        <li class="header-navigation-item" *ngIf="(part >= 3 && !isAuth)">
+          <a class="header-link" routerLink="/{{ partString }}/auth/login" routerLinkActive="active">CONNEXION</a>
+        </li>
+        <li class="header-navigation-item" *ngIf="(part >= 3 && !isAuth)">
+          <a class="header-link" routerLink="/{{ partString }}/auth/signup" routerLinkActive="active">INSCRIPTION</a>
+        </li>
+      </ul>
+      <ul class="header-navigation nav-end">
 
-  </ul>
+      </ul>
+    </nav>
+  </div>
 </header>
-
+<!--
 <div class="hero-image" *ngIf="mode === 'list'">
   <h2 class="hero-text">
     LE MEILLEUR ENDROIT POUR VENDRE VOS OBJETS
   </h2>
 </div>
+-->
