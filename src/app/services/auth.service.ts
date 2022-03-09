@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+let url = 'https://mmnopencvtech.herokuapp.com/api/';
+//let url = 'http://localhost:5000/api/';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +20,7 @@ export class AuthService {
   createNewUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.http.post(
-        'http://localhost:3000/api/auth/signup',
+        url+'auth/signup',
         { email: email, password: password })
         .subscribe(
           () => {
@@ -42,7 +44,7 @@ export class AuthService {
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.http.post(
-        'http://localhost:3000/api/auth/login',
+        url+'auth/login',
         { email: email, password: password })
         .subscribe(
           (authData: { token: string, userId: string }) => {
